@@ -1,7 +1,5 @@
 package trying;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -12,7 +10,6 @@ public class AMain {
         intsList.add(211);
         intsList.add(12);
         intsList.add(9);
-        intsList.add(3426);
         intsList.add(998);
         intsList.add(90);
         intsList.add(32);
@@ -20,7 +17,12 @@ public class AMain {
         intsList.add(9);
         intsList.add(43);
 
+        int sum = intsList.stream().mapToInt(Integer::intValue).sum();
+        int max = intsList.stream().mapToInt(Integer::intValue).max().getAsInt();
+        double average = intsList.stream().mapToInt(Integer::intValue).average().getAsDouble();
         System.out.println(intsList.stream().sorted().collect(Collectors.toList()));
-        System.out.println(intsList.stream().map(s -> s * 2).sorted().collect(Collectors.toList()));
+        System.out.println(sum);
+        System.out.println(max);
+        System.out.println(average);
     }
 }
