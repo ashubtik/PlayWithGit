@@ -20,6 +20,7 @@ public class AMain {
         intsList.add(9);
         intsList.add(43);
 
-        System.out.println(intsList.stream().distinct().sorted().collect(Collectors.toList()));
+        System.out.println(intsList.stream().sorted().collect(Collectors.toList()));
+        System.out.println(intsList.stream().map(s -> s * 2).sorted().collect(Collectors.toList()));
     }
 }
